@@ -1,0 +1,274 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #121212; 
+    color: #e0e0e0;            
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   2. TOPO / HEADER
+   ========================================================================== */
+header {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    border-bottom: 2px solid #e21b21; 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+header a {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+header a:hover {
+    color: #e21b21;
+}
+
+header button {
+    background-color: #e21b21;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+header button:hover {
+    background-color: #b31217;
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   3. HERO BANNER
+   ========================================================================== */
+.hero {
+    background: linear-gradient(135px, #1c052a 0%, #0c0d12 100%); 
+    height: 45vh; /* Diminuído um pouco a altura para não cobrir a tela toda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero button {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.hero button:hover {
+    background-color: #fff;
+    color: #121212;
+}
+
+/* ==========================================================================
+   4. SEÇÕES COMUNS (BEM-VINDO E FABRICANTE)
+   ========================================================================== */
+.bemvindo, .fabricante {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.bemvindo h1, .fabricante h1 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.bemvindo p, .fabricante p {
+    font-size: 18px;
+    color: #aaa;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+/* Força a imagem da logo grande do bem-vindo a ficar controlada */
+.bemvindo img {
+    max-width: 400px; 
+    width: 100%;       
+    height: auto;      
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    margin: 0 auto;    
+}
+
+.fabricante {
+    background-color: #161616; 
+}
+
+/* ==========================================================================
+   5. SEÇÃO DE PRODUTOS (CARDS)
+   ========================================================================== */
+.produtos {
+    padding: 60px 8%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.produtos h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.grid {
+    display: flex;               
+    flex-wrap: wrap;             
+    justify-content: center;     
+    gap: 25px;
+    max-width: 1200px;           
+    width: 100%;
+}
+
+.card {
+    background-color: #1c1c1c;
+    border: 1px solid #2a2a2a;
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    width: 300px;                
+    max-width: 100%;             
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #e21b21; 
+}
+
+.nomeProduto {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.descricao {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   6. SEÇÃO SOBRE NÓS (ONDE ESTAVAM AS IMAGENS GRANDES)
+   ========================================================================== */
+.sobre {
+    background-color: #161616;
+    padding: 60px 8%;
+}
+
+.sobre h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Container que segura as 3 fotos juntas */
+.fotos {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Centraliza as fotos horizontalmente */
+    flex-wrap: wrap;          
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* SOLUÇÃO DEFINITIVA: Domando o tamanho das imagens do bloco de fotos */
+.fotos img {
+    width: 280px !important;  /* Força a largura máxima ideal */
+    height: 180px !important; /* Força a altura ideal */
+    object-fit: cover;        /* Recorta para não distorcer */
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.sobre p {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 600px;
+    line-height: 1.6;
+    text-align: center; 
+}
+
+.sobre ul {
+    margin: 15px auto; 
+    padding-left: 20px;
+    display: inline-block; 
+    text-align: left; 
+}
+
+.sobre li {
+    margin-bottom: 8px;
+    color: #aaa;
+}
+
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #0d0d0d;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px solid #1a1a1a;
+}
